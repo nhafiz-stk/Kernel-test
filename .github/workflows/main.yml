@@ -9,7 +9,7 @@ jobs:
     - name: Install Alat
       run: |
         apt-get update
-        DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential bc zip curl git-core gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi libssl-dev python2 nodejs
+        DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential bc zip curl git-core gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi libssl-dev python2 nodejs bison flex libelf-dev libncurses-dev
         ln -sf /usr/bin/python2 /usr/bin/python
     - name: Clone Kernel
       run: git clone --depth=1 https://github.com/Riva-Development/android_kernel_xiaomi_msm8917.git kernel_workspace
