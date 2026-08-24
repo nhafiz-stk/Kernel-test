@@ -33,7 +33,7 @@ jobs:
         export CROSS_COMPILE=aarch64-linux-gnu-
         export CROSS_COMPILE_ARM32=arm-linux-gnueabi-
         make O=out riva_defconfig
-        make O=out HOSTCFLAGS="-fcommon" -j$(nproc --all)
+        make O=out HOSTCFLAGS="-fcommon" KCFLAGS="-w" -j1
     - name: Bikin ZIP AnyKernel
       run: |
         git clone https://github.com/osm0sis/AnyKernel3.git AnyKernel3
