@@ -21,7 +21,7 @@ jobs:
         echo "CONFIG_KSU_TAMPERSYS=y" >> arch/arm64/configs/riva_defconfig
         echo "CONFIG_OVERLAY_FS=y" >> arch/arm64/configs/riva_defconfig
         sed -i 's/CONFIG_KPROBES=y/# CONFIG_KPROBES is not set/g' arch/arm64/configs/riva_defconfig
-        find drivers/kernelsu -type f -name "*.c" -exec sed -i 's/access_ok(\([^,]*\), \([^)]*\))/access_ok(VERIFY_READ, \1, \2)/g' {} +
+        find drivers/kernelsu -type f -name "*.c" -exec sed -i 's/access_ok(\([^,]*\), \([^)]*\))/access_ok
     - name: Compile
       run: |
         cd kernel_workspace
